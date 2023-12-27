@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block content %}My blog website {% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="header">
+    <div><a href="{{  url_for('index')  }}"><img src="{{ url_for('static', filename='logo--red.png') }}" height="65px" style="margin-top: 20px; margin-left: 20px;"></a></div>
+    <div class="head">Articles</div>
+    <div class="head">Books</div>
+    <div class="head">Workshops</div>
+    <div class="head">Conferences</div>
+    <div class="head">Membership</div>
+    <div class="head">More</div>
+    <div><img src="{{ url_for('static', filename='download.svg') }}" style="position: absolute; right: 22.5%; top:4.7%; z-index: 2;" alt=""><input type="search" placeholder="Search articles..." class="search"></div>
+  </div>
+  <div class="cat">
+    <div class="dog">Accessibility</div>
+    <div class="dog">UX</div>
+    <div class="dog">CSS</div>
+    <div class="dog">Javascript</div>
+    <div class="dog">Performance</div>
+    <div class="dog">Design</div>
+    <div class="dog">Figma</div>
+    <div class="dog">Wallpapers</div>
+    <div class="dog">React</div>
+    <div class="dog">Vue</div>
+    <div class="dog">Round-ups</div>
+    <div class="dog">Web Designs</div>
+    <div class="dog">Guide</div>
+  </div>
+  <br><hr style="border-color: rgb(26, 26, 26); border-style: solid;">
+
+  <div style="color: #bdddff; margin-top: 40px; margin-left: 100px; font-size: 17px;">
+    <span style="color: #F94962; text-decoration: underline;">Mohan Raj</span> / Dec 19, 2023
+  </div>
+  <div style="margin-left: 100px; font-weight: bold;">
+    <h1 style="margin-bottom: 5px;">Five-Second Testing: Taking A Closer Look At First</h1>
+    <h1 style="margin-top: 0px;">Impressions (Case Study)</h1>
+  </div>
+
+  <div class="deer">
+    <img src="{{ url_for('static', filename='download (2).svg') }}" height="20px"> <span style="margin-right: 35px;">16 min read</span>
+    <img src="{{ url_for('static', filename='download (3).svg') }}" height="20px"> <a href="" style="color: #bdddff; text-decoration: underline;">Testing, Usability, User Research, Case Studies</a> <br> <br>
+    <img src="{{ url_for('static', filename='download (1).svg') }}" height="20px"> Share on <a href="" style="color: #bdddff; text-decoration: underline;">Twitter, Linkedin</a>
+  </div>
+  <div class="sui">
+    <div class="summary">
+      <span style="color: #d33a2c; margin-right: 10px; font-size: 17px">QUICK SUMMARY ↬ </span>Five-second testing is a popular method of usability research used in the industry. It is a quick and effective way to test concepts of visual designs, yet in essence, its core belief boils down to virtually a superstition. A notion barely backed up by concrete evidence, yet often taken at face value, that somehow five seconds are just the right time to gauge first impressions. In this article, Eduard Kuric looks under the hood of how first impressions are affected by time, the test participant’s cognitive abilities and the visual complexity of the tested picture, and how UX researchers and product owners can ensure that the user’s first steps can get off on the right foot.
+    </div>
+    <div class="author">
+      <div>
+        <img src="{{ url_for('static', filename='download.jpg') }}" class="img" width="180px" height="180px"> <br> <br> <br> <br>
+      </div>
+      <div>ABOUT THE AUTHOR</div> <br>
+      <div>Eduard Kuric is the Head of the UX Research <br> Department and the Founder of UXtweak. <br> He has close personal experience with both <br> design and use of UX research … <span style="color: #6fd2ff">More about Eduard ↬</span> </div>
+    </div>
+  </div>
+  <hr style="width: 550px; transform: translateX(-290px);">
+  <div class="sui">
+    <div class="summary">
+      In today’s world of shortening attention spans and omnipresent hustle, wasting even a second could mean losing the chance to earn more time from a person you want to impress. If your interests lie in creating good user experiences, there is a fair chance you have heard of five-second testing.
+    </div>
+    <div style="margin-right: 175px;">
+      <h2>Email Newsletter</h2>
+      <input type="email" style="width: 150px; height: 70px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; font-style: italic; font-size: 18px; padding-left: 15px;" placeholder="Your email"><button>Meow!</button>
+    </div>
+  </div>
+  <div class="summary">
+    In short, you show a picture of whatever you are designing (site, app, pair of socks) to a member of your intended audience for exactly five seconds. Then, you hide the picture and ask the participant a couple of questions. The goal is to learn whether the reaction — the participants’s first impression — is what you wanted to see. Did you get the main message across? Do people remember the company’s name? Sounds like an efficient way to test your product without needing to turn to full-on usability testing, right?
+  </div>
+  <div class="summary">
+    Note: The word “participant” in this article is used to refer to users involved in five-second testing or related usability research methods. The word “user” is used in more general contexts since users form first impressions all the time, not just when you are testing it.
+  </div>
+  <div>
+    <img src="{{ url_for('static', filename='capture.png') }}" width="750px" style="margin-left: 100px; margin-top: 40px;">
+  </div>
+  <div class="summary">
+    Why is it five seconds exactly, though? Are five seconds some magical moment when everything we see should become clear? And if it does not, does it automatically mean that a user experience is bad? Or are five seconds just the right amount of time for first impressions to brew in the user’s mind so that they’re neither undercooked nor overcooked?
+  </div>
+  <div class="summary">
+    These are some of the questions that we asked ourselves. Not satisfied with the answers written by others who covered the topic before us, we kept drilling and conducted an actual <span style="color: #6fd2ff">peer-reviewed</span>  scientific case study, exploring the hidden truths behind the testing of first impressions. The research paper examines the five-second test and discusses the results.
+  </div>
+  <div class="summary">
+    So strap in and read what science has to say about five-second testing. And then, what the implications are for you so that you can take practical advantage of this new knowledge to develop better first impressions of your services or products. But first, let us delve into what we know about five-second testing and its caveats so that you see the greater picture of the focal points of our investigation.
+  </div>
+  <div class="summary">
+    <h3 style="font-weight: bold; font-size: 30px; color: white;">The Mythos Of Five Seconds And Its Gaps </h3>
+    <div>You may be familiar with the well-known statistic that a website has about ten seconds to communicate its key message to the user. Knowing that waiting only five seconds to ask testing participants about their first impressions may suddenly seem like an odd choice. If indeed visitors of a website have about ten seconds to grasp a message, are five seconds really enough time for users? There is an <span style="color: #6fd2ff">alleged justification</span>, as we explain below.</div>
+  </div>
+  <div class="summary">
+    Cutting a bit forward, though, the factual basis for it is admittedly a bit of a Wild West if you look for hard data to support it. There is an almost uncanny resemblance to another not wholly scientific five-second rule that says it’s okay to eat food off the ground if it’s within five seconds from when it dropped there.
+  </div>
+  <div class="summary">
+    The five-second testing method has its origins as a simplification of usability testing. The first references to five-second testing point to Christine Perfetti, who coined the term for the method in the mid-2000s. The answer to “Why five seconds exactly?” comes largely from anecdotal evidence in the form of the experience of usability researchers.
+  </div>
+  <div class="summary">
+    The common story is that if something is shown to participants for more than five seconds, their first impressions will start to deviate from the actual user’s genuine initial impressions. The participant’s perspective becomes more analytical and less task-driven. The five-second test lets you avoid overtly speculative feedback that nobody would give you under normal circumstances.
+  </div>
+  <div class="summary">
+    Fair enough, that could potentially be true. But five seconds is still quite a short period of time. Consider how different people can be when it comes to their cognitive abilities (and there is nothing wrong with that). For example, one user’s sharp perception may let them realistically form first impressions in five seconds or faster, but another user may barely have the time to blink, much less absorb any meaningful information–they need a moment to take it in at their own tempo.
+  </div>
+  <div class="summary">
+    The reasoning starts to fall apart a bit more at its seams once you also consider the visual complexity of the stimulus (a.k.a., the picture you show to the participants). The nature of the things you may want to test can range from very simple to very complex. If the stimulus is simple, it is possible to take even less than five seconds for participants to form their initial impressions. Would this mean that there would be the risk of them using the remaining time to get over-exceedingly analytical?
+  </div>
+  <div class="summary">
+    After all, if a stimulus is too complex, that is exactly why you conduct five-second testing. It allows us to find out about things like complexity. It can help you find out if participants cannot extract the key information you want to communicate so that you can fix it.
+  </div>
+  <div class="summary">
+    However, we need to consider that not all user interfaces are the landing pages of websites. They serve to support different user tasks, some of which cannot avoid having a certain degree of complexity.
+  </div>
+  <div class="summary">
+    As we have discussed so far, there are certainly a fair number of question marks surrounding five-second testing. The method still undeniably has a number of merits, as proven by our experience at UXtweak, where we also provide our own Five Second Test tool. A lack of proper research on the topic is what drove us at UXtweak Research to conduct our very own case study.
+  </div>
+  <div class="summary">
+    <h3 style="font-weight: bold; font-size: 30px; color: white;">Takeaways</h3>
+    <div>Statistically, all the variables we experimented with — the time duration of showing pictures to participants, the participants’ innate cognitive abilities, and the visual complexity of pictures — had a significant effect on the first impression answers.
+    </div>
+  </div>
+  <div class="summary">
+    For instance, between the groups that were shown screenshots of websites for two, five, and ten seconds, the number of answers that incorrectly identified what the websites were for dropped as time progressed. Notable is the difference between five and ten seconds. If the participants were really focusing on inconsequential details after five seconds, there should not be differences in recognition of such a key aspect as the website’s entire purpose.
+  </div>
+  <div>
+    <img src="{{ url_for('static', filename='capture1.png') }}" width="750px" style="margin-left: 100px; margin-top: 40px;">
+  </div>
+  <div class="summary">
+    <ul>
+      <li><span>Attitudes crystallize faster than in five seconds.</span> <br>
+        In attitudinal questions where participants are asked to rate how they view the picture’s various qualities (e.g., from clear to confusing, from captivating to dull), answers stay relatively consistent, regardless of how much time the participant has or how good their cognitive abilities are. If you are laser-focused on assessing participants’ attitudes about your product and nothing else, you could present pictures for two seconds, or possibly even less, as research done by others on a related topic also implies.</li>
+    </ul>
+  </div>
+  <div class="summary">
+    <ul>
+      <li><span>Logos are recognized earlier than in five seconds (with one exception).</span> <br>
+        The target identification questions where participants are asked to recall the company name from the logo are, on the whole, impacted by time very little. This is to be expected: when viewing a website, our eyes are usually drawn to the top left corner to find out where we have found ourselves. There is an exception to this rule, however.
+        Among participants with slower perceptual speed, significantly fewer identified the company name correctly at two seconds when compared to five seconds. This establishes five seconds as a more inclusive choice for timing your first impression test if you expect your target audience to have, on average, lower perceptual speed than the general populace and if the primary aim is to test contents of the header, such as logo design or company name identification. Otherwise, two seconds is a safe bet.</li>
+    </ul>
+  </div>
+  <div class="summary">
+    <ul>
+      <li><span>Irrelevant nitpicking? Yes, if visual complexity is low.</span> <br>
+        In some cases, the popular narrative about five seconds being a good viewing time for testing first impressions is indeed true. Particularly for the simplest website screenshots, once five seconds have elapsed, participants start paying attention to minute details (e.g., the girl’s shirt color in the hero image).
+        Curiously, though, having more time does not mean that participants would write longer or more complex answers. Instead, when participants have ten seconds to view the screenshots, the higher visual complexity of the screenshots is reflected in better-quality answers. Participants stay more on-topic–describing how the site is visually structured or justifying their criticisms of the page’s design. Different viewing times may be optimal in different situations. Especially since…</li>
+    </ul>
+  </div>
+  <div class="summary">
+    <ul>
+      <li><span>Low working memory warrants longer viewing time.</span> <br>
+        When asked to reiterate what they saw in their own words, participants with low and high working memory provided significantly different answers. With low working memory, answers become shorter, less complex, and recall fewer concepts overall. However, when the viewing time is extended to ten seconds, these differences disappear. This implies that the same information is being processed — memory capacity just dictates how fast it can happen.
+        Without knowing where each participant’s memory ability stands, it is difficult to tell what they would actually recall if we left them to work at their own pace. Consequently, assessment of working memory before testing first impressions (and adjusting viewing time accordingly) should be considered a good practice.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div style="font-size: 20px; transform: translateY(40px); margin-bottom: 40px;">
+      <center>BROWSE ALL SMASHING MAGAZINE TOPICS</center>
+    </div>
+    <div>
+      <center>
+        <ul class="foot">
+          <li>Accessibility</li>
+          <li>Best practices</li>
+          <li>Business</li>
+          <li>Career</li>
+          <li>Checklists</li>
+          <li>CSS</li>
+          <li>Data Visualization</li>
+          <li>Design</li>
+          <li>Design Patterns</li>
+        </ul>
+      </center>
+    </div>
+    <div>
+      <center>
+        <ul class="foot">
+          <li>Design Systems</li>
+          <li>E-Commerce</li>
+          <li>Figma</li>
+          <li>Freebies</li>
+          <li>HTML</li>
+          <li>Illustrator</li>
+          <li>Inspiration</li>
+          <li>Javascript</li>
+          <li>Mobile</li>
+        </ul>
+      </center>
+    </div>
+    <div>
+      <center>
+        <ul class="foot">
+          <li>Vue</li>
+          <li>Wallpapers</li>
+          <li>Web Design</li>
+          <li>Workflow</li>
+        </ul>
+      </center>
+    </div>
+  </div>
+</body>
+</html>

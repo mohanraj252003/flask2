@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        .post {
+            padding: 10px;
+            margin-right: 500px;
+            background-color: #fff;
+            margin-left: 100px;
+        }
+        .post a h2{
+            font-size: 40px;
+        }
+        body{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            margin-top: 20px;
+            align-items: center;
+            }
+        .head{ 
+            padding: 7px 20px; 
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            border-radius: 7px;
+            cursor: pointer;
+            }
+        .head:hover{
+            background-color: rgba(0, 0, 0, 0.11);
+            }
+        .search{
+            width: 300px;
+            height: 50px;
+            border-radius: 10px;
+            margin-right: 20px;
+            padding-left: 40px;
+            font-size: 25px;
+            font-weight: bold;
+            position: relative;
+            border-style: none;
+            box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+            }
+        .cat{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.11);
+            padding-bottom: 20px; 
+            }
+        .dog{
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #ffdfdd;
+            color: #bdddff;
+            border-radius: 10px;
+            text-align: center;
+            color: #D33A2C;
+            
+            }
+        .dog:hover{
+            border-color: #D33A2C;
+            border-style: solid;
+            border-width: 0.8px;
+        }
+        h1{
+            background: linear-gradient(to left,aqua,rgb(231, 231, 43),rgb(90, 255, 90),orange, rgb(255, 135, 155), rgb(36, 36, 255), aqua);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 55px;
+        }
+        .blogcont{
+            color: rgb(26, 26, 26);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;  
+            -webkit-box-orient: vertical;
+        }
+        .time{
+            margin-bottom: -20px;
+            color: #ff6456;
+        }
+        .edit{
+            color: #D33A2C;
+        }
+        .mainblog{
+            margin: 0 150px;
+        }
+        .blogpara{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+        }
+        .footer{
+            background-color: #D33A2C;
+            height: 250px;
+            margin-top: 40px;
+            color: white;
+            margin-bottom: 0;
+            }
+            .footer div .foot li{
+            display: inline-block;
+            list-style-type: circle;
+            padding: 15px;
+            font-size: 18px;
+            margin-top: 15px;
+            cursor: pointer;
+            }
+            .foot{
+            margin: 5px;
+            height: 25px;
+            }
+            .footer div .foot li:hover{
+            color: black;
+            }
+    </style>
+</head>
+<body style="background-color: #fff;">
+    <div class="header" style="background-color: #D33A2C; margin-top:0; height: 80px;">
+        <div><a href="{{  url_for('index')  }}"><img src="{{ url_for('static', filename='logo.svg') }}" height="65px" style="margin-top: 20px; margin-left: 20px;"></a></div>
+        <div class="head"><a href="{{ url_for('create') }}" style="color: white; text-decoration: none;">Create</a></div>
+        <div class="head"><a href="{{ url_for('home') }}" style="color: #fff; text-decoration: none;">Article</a></div>
+        <div class="head">Workshops</div>
+        <div class="head">Conferences</div>
+        <div class="head">Membership</div>
+        <div class="head">More</div>
+        <div><img src="{{ url_for('static', filename='download.svg') }}" style="position: absolute; right: 22.5%; top:4.7%; z-index: 2; border-color: white;" alt=""><input type="search" placeholder="Search articles..." class="search"></div>
+      </div>
+
+      <div class="cat" style="margin-top: 20px;">
+        <div class="dog">Accessibility</div>
+        <div class="dog">UX</div>
+        <div class="dog">CSS</div>
+        <div class="dog">Javascript</div>
+        <div class="dog">Performance</div>
+        <div class="dog">Design</div>
+        <div class="dog">Figma</div>
+        <div class="dog">Wallpapers</div>
+        <div class="dog">React</div>
+        <div class="dog">Vue</div>
+        <div class="dog">Round-ups</div>
+        <div class="dog">Web Designs</div>
+        <div class="dog">Guide</div>
+      </div>
+      <br>
+    
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+
+        {% block content %} {% endblock %}
+    </div>
+
+    <div class="footer">
+        <div style="font-size: 20px; transform: translateY(40px); margin-bottom: 40px;">
+          <center>BROWSE ALL SMASHING MAGAZINE TOPICS</center>
+        </div>
+        <div>
+          <center>
+            <ul class="foot">
+              <li>Accessibility</li>
+              <li>Best practices</li>
+              <li>Business</li>
+              <li>Career</li>
+              <li>Checklists</li>
+              <li>CSS</li>
+              <li>Data Visualization</li>
+              <li>Design</li>
+              <li>Design Patterns</li>
+            </ul>
+          </center>
+        </div>
+        <div>
+          <center>
+            <ul class="foot">
+              <li>Design Systems</li>
+              <li>E-Commerce</li>
+              <li>Figma</li>
+              <li>Freebies</li>
+              <li>HTML</li>
+              <li>Illustrator</li>
+              <li>Inspiration</li>
+              <li>Javascript</li>
+              <li>Mobile</li>
+            </ul>
+          </center>
+        </div>
+        <div>
+          <center>
+            <ul class="foot">
+              <li>Vue</li>
+              <li>Wallpapers</li>
+              <li>Web Design</li>
+              <li>Workflow</li>
+            </ul>
+          </center>
+        </div>
+      </div>
+</body>
+</html>

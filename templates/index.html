@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 style="margin-left: 105px; font-size: 30px; color: #d33a2c">{% block title %} Posts {% endblock %}</h2>
+    {% for post in posts %}
+        <div class='post'>
+            <p class="time">{{ post['created'] }}</p>
+            <a href="{{ url_for('blog', id=post['id']) }}" style="color: black; text-decoration: none;"><h2>{{ post['title'] }}</h2></a>
+            <a href="{{ url_for('blog', id=post['id']) }}" style="text-decoration: none;"><p class="blogcont">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post['content'] }}</p></a>
+            <a href="{{ url_for('edit', id=post['id']) }}" class="edit">Edit</a>
+        </div>
+    {% endfor %}
+{% endblock %}

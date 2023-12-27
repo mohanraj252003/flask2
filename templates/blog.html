@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="mainblog">
+      <h1>{{ post['title'] }}</h1>
+      <p class="blogpara">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post['content']|replace('.','.<br><br>')|safe }}</p>
+    </div>
+{% endblock %}
